@@ -13,7 +13,7 @@ module MyApp.View2.Test {
                 $scope = $rootScope.$new();
             }));
 
-            it('should ....', inject(($controller) => {
+            it('should ....', inject(($controller: ng.IControllerService) => {
                 //spec body
                 var view2Ctrl = $controller(View2.View2Ctrl, { $scope: $scope });
                 expect(view2Ctrl).toBeDefined();

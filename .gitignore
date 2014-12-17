@@ -8,3 +8,4 @@ tmp
 app/dist/
 npm-debug.log
 .sass-cache/
+e2e-tests/compiled/

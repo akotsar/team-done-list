@@ -1,6 +1,6 @@
 /// <reference path="_app.ts" />
 
-module App {
+module MyApp {
     // Declare app level module which depends on views, and components
     angular.module('myApp', [
         'ngRoute',

@@ -17,6 +17,7 @@
 // Configuring paths
 var scriptsSrcPath = 'app/scripts',                 // Path to the source TypeScript files.
     scriptsDstPath = 'app/dist/js',                 // The destination directory for compiled .js files
+    scriptsDstFile = 'app/dist/js/all.js',          // Filename for all combined javascript, combined.
     testScriptsMask = '**/*_test.ts',               // A mask for unit tests (to be excluded in production mode).
     scriptsSourceMapRelativePath = '../../scripts', // A relative path from the compiled .js files to the source .ts files (for source map).
     e2eScriptsSrcPath = 'e2e-tests/**/*.ts',        // Path to the source .ts files of e2e tests.
@@ -35,6 +36,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     gulpif = require('gulp-if'),
     ignore = require('gulp-ignore'),
+    concat = require('gulp-concat'),
     eventStream = require('event-stream'),
     del = require('del'),
     argv = require('yargs').argv;
@@ -43,23 +45,33 @@ var gulp = require('gulp'),
  * The 'scripts' task.
  */
 gulp.task('scripts', function() {
-    var tsResult = gulp.src([scriptsSrcPath + '/**/*.ts', '!' + scriptsSrcPath + '/typings/**', '!**/_*.ts'])
-                       .pipe(gulpif(argv.production, ignore.exclude(testScriptsMask)))
-                       .pipe(gulpif(!argv.production, sourcemaps.init()))
-                       .pipe(typescript({
-                           declarationFiles: false,
-                           noImplicitAny: true,
-                           module: 'commonjs',
-                           target: 'es5',
-                           sourceRoot: scriptsSourceMapRelativePath
-                       }));
+    var multiple = gulp.src([scriptsSrcPath + '/**/*.ts', '!' + scriptsSrcPath + '/typings/**', '!**/_*.ts'])
+        .pipe(gulpif(argv.production, ignore.exclude(testScriptsMask)))
+        .pipe(gulpif(!argv.production, sourcemaps.init()))
+        .pipe(typescript({
+            declarationFiles: false,
+            noImplicitAny: true,
+            module: 'commonjs',
+            target: 'es5',
+            sourceRoot: scriptsSourceMapRelativePath
+        }));
 
-    return eventStream.merge(
-        tsResult.js
-        	.pipe(gulpif(!argv.production, sourcemaps.write()))
+    var pipelines = [
+        multiple.js
+            .pipe(gulpif(!argv.production, sourcemaps.write()))
             .pipe(gulpif(argv.production, uglify()))
-        	.pipe(gulp.dest(scriptsDstPath))
-    );
+            .pipe(gulp.dest(scriptsDstPath))
+    ];
+
+    // Adding another pipeline for a single .JS file ONLY when in production mode.
+    if (argv.production) {
+        pipelines.push(multiple.js
+            .pipe(concat(scriptsDstFile.split('/').pop()))
+            .pipe(gulpif(argv.production, uglify()))
+            .pipe(gulp.dest(scriptsDstFile.split('/').slice(0, scriptsDstFile.split('/').length - 1).join('/'))));
+    }
+
+    return eventStream.merge.apply(eventStream, pipelines);
 });
 
 /*

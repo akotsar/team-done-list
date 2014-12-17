@@ -39,19 +39,19 @@
     $script([
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
-      'release/js/app.js',
-      'release/js/controllers/view1/view1.js',
-      'release/js/controllers/view2/view2.js',
-      'release/js/components/version/version.js',
-      'release/js/components/version/version-directive.js',
-      'release/js/components/version/interpolate-filter.js'
+      'dist/js/app.js',
+      'dist/js/controllers/view1/view1.js',
+      'dist/js/controllers/view2/view2.js',
+      'dist/js/components/version/version.js',
+      'dist/js/components/version/version-directive.js',
+      'dist/js/components/version/interpolate-filter.js'
     ], function() {
       // when all is done, execute bootstrap angular application
       angular.bootstrap(document, ['myApp']);
     });
   </script>
   <title>My AngularJS App</title>
-  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="dist/css/app.css">
 </head>
 <body ng-cloak>
   <ul class="menu">

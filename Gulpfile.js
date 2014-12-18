@@ -55,6 +55,9 @@ gulp.task('scripts', function() {
             target: 'es5',
             sourceRoot: scriptsSourceMapRelativePath
         })).js
+        .on('error', notify.onError({
+            message: 'Scripts compilation error'
+        }))
         .pipe(concat(scriptsDstFile.split('/').pop()))
         .pipe(gulpif(!argv.production, sourcemaps.write()))
         .pipe(gulpif(argv.production, uglify()))
@@ -74,6 +77,9 @@ gulp.task('test-scripts', function () {
             target: 'es5',
             sourceRoot: testScriptsSourceMapRelativePath
         })).js
+        .on('error', notify.onError({
+            message: 'Test scripts compilation error'
+        }))
         .pipe(gulpif(!argv.production, sourcemaps.write()))
         .pipe(gulp.dest(testScriptsDstPath));
 });
@@ -91,6 +97,9 @@ gulp.task('e2e-test-scripts', function () {
             sourceRoot: e2eScriptsSourceMapRelativePath
         }))
         .js
+        .on('error', notify.onError({
+            message: 'E2E test scripts compilation error'
+        }))
         .pipe(gulp.dest(e2eScriptsDstPath));
 });
 
@@ -100,7 +109,9 @@ gulp.task('e2e-test-scripts', function () {
 gulp.task('sass', function() {
     return gulp.src(stylesSrcPath + '/**/*.scss')
         .pipe(sass({ style: argv.production ? 'compressed' : 'expanded', sourcemap: !argv.production, sourcemapPath: stylesSourceMapRelativePath }))
-        .on('error', function (err) { console.log(err.message); })
+        .on('error', notify.onError({
+            message: 'SASS scripts compilation error'
+        }))
         .pipe(gulp.dest(stylesDstPath));
 });
 

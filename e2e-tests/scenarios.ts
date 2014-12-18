@@ -20,7 +20,7 @@ module MyApp.Tests {
 
 
             it('should render view1 when user navigates to /view1', () => {
-                expect(element.all(by.css('[ng-view] p')).first().getText()).
+                expect(element.all(by.css('[ui-view] p')).first().getText()).
                     toMatch(/partial for view 1/);
             });
 
@@ -35,7 +35,7 @@ module MyApp.Tests {
 
 
             it('should render view2 when user navigates to /view2', () => {
-                expect(element.all(by.css('[ng-view] p')).first().getText()).
+                expect(element.all(by.css('[ui-view] p')).first().getText()).
                     toMatch(/partial for view 2/);
             });
 

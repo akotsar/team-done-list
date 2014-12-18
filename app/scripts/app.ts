@@ -1,14 +1,32 @@
 /// <reference path="_app.ts" />
+/// <reference path="typings/angular-ui/angular-ui-router.d.ts"/>
 
 module MyApp {
     // Declare app level module which depends on views, and components
     angular.module('myApp', [
-        'ngRoute',
+        'ui.router',
         'myApp.view1',
         'myApp.view2',
         'myApp.version'
     ])
-        .config(['$routeProvider', ($routeProvider: ng.route.IRouteProvider) => {
-            $routeProvider.otherwise({ redirectTo: '/view1' });
-        }]);
+    .config(['$urlRouterProvider', '$stateProvider', (
+        $urlRouterProvider: ng.ui.IUrlRouterProvider,
+        $stateProvider: ng.ui.IStateProvider
+        ) => {
+        // For any unmatched url, redirect to /view1
+        $urlRouterProvider.otherwise("/view1");
+
+        // Configure states.
+        $stateProvider
+            .state('view1', {
+                url: "/view1",
+                templateUrl: "views/view1.html",
+                controller: View1.View1Ctrl
+            })
+            .state('view2', {
+                url: "/view2",
+                templateUrl: "views/view2.html",
+                controller: View2.View2Ctrl
+            });
+    }]);
 }

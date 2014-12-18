@@ -9,13 +9,6 @@ module MyApp.View2 {
         }
     }
 
-    angular.module('myApp.view2', ['ngRoute'])
-        .config([
-            '$routeProvider', ($routeProvider: ng.route.IRouteProvider) => {
-                $routeProvider.when('/view2', {
-                    templateUrl: 'views/view2.html',
-                    controller: View2Ctrl
-                });
-            }
-        ]);
+    angular.module('myApp.view2', [])
+        .controller("View2Ctrl", View2Ctrl);
 }

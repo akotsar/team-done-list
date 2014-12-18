@@ -10,18 +10,11 @@ module MyApp.View1 {
         public static $inject = [
             '$scope'
         ];
-        constructor(private $scope: IView1CtrlScope) {
+        constructor(public $scope: IView1CtrlScope) {
             $scope.greeting = "Hello from View1Ctrl constructor.";
         }
     }
 
-    angular.module('myApp.view1', ['ngRoute'])
-        .config([
-            '$routeProvider', ($routeProvider: ng.route.IRouteProvider) => {
-                $routeProvider.when('/view1', {
-                    templateUrl: 'views/view1.html',
-                    controller: View1Ctrl
-                });
-            }
-        ]);
+    angular.module('myApp.view1', [])
+        .controller("View1Ctrl", View1Ctrl);
 }

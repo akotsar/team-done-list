@@ -15,7 +15,7 @@ module MyApp.View2.Test {
 
             it('should ....', inject(($controller: ng.IControllerService) => {
                 //spec body
-                var view2Ctrl = $controller(View2.View2Ctrl, { $scope: $scope });
+                var view2Ctrl: View2Ctrl = $controller(View2.View2Ctrl, { $scope: $scope });
                 expect(view2Ctrl).toBeDefined();
             }));
 

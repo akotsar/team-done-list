@@ -1,5 +1,5 @@
-module MyApp.Version.InterpolateFilter {
-    angular.module('myApp.version.interpolate-filter', [])
+module TeamDoneList.Version.InterpolateFilter {
+    angular.module('teamDoneList.version.interpolate-filter', [])
         .filter('interpolate', [
             'version', (version: string) => {
                 return (text: string) => {

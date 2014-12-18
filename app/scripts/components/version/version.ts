@@ -1,7 +1,7 @@
-module MyApp.Version {
-    angular.module('myApp.version', [
-        'myApp.version.version-directive',
-        'myApp.version.interpolate-filter'
+module TeamDoneList.Version {
+    angular.module('teamDoneList.version', [
+        'teamDoneList.version.version-directive',
+        'teamDoneList.version.interpolate-filter'
     ])
         .value('version', '0.1');
 }

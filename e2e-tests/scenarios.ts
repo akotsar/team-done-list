@@ -2,8 +2,8 @@
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-module MyApp.Tests {
-    describe('my app', () => {
+module TeamDoneList.Tests {
+    describe('Team Done List', () => {
 
         browser.get('index.html');
 

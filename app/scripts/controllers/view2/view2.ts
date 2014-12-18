@@ -1,6 +1,6 @@
 /// <reference path="../../_app.ts" />
 
-module MyApp.View2 {
+module TeamDoneList.View2 {
     export class View2Ctrl {
         public static $inject = [
             '$scope'
@@ -9,6 +9,6 @@ module MyApp.View2 {
         }
     }
 
-    angular.module('myApp.view2', [])
+    angular.module('teamDoneList.view2', [])
         .controller("View2Ctrl", View2Ctrl);
 }

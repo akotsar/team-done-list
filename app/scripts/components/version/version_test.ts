@@ -1,8 +1,8 @@
 /// <reference path="version.ts"/>
 
-module MyApp.Version.Test {
-    describe('myApp.version module', () => {
-        beforeEach(module('myApp.version'));
+module TeamDoneList.Version.Test {
+    describe('teamDoneList.version module', () => {
+        beforeEach(module('teamDoneList.version'));
 
         describe('version service', () => {
             it('should return current version', inject((version: string) => {

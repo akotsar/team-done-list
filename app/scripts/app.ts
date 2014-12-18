@@ -1,13 +1,13 @@
 /// <reference path="_app.ts" />
 /// <reference path="typings/angular-ui/angular-ui-router.d.ts"/>
 
-module MyApp {
+module TeamDoneList {
     // Declare app level module which depends on views, and components
-    angular.module('myApp', [
+    angular.module('teamDoneList', [
         'ui.router',
-        'myApp.view1',
-        'myApp.view2',
-        'myApp.version'
+        'teamDoneList.view1',
+        'teamDoneList.view2',
+        'teamDoneList.version'
     ])
     .config(['$urlRouterProvider', '$stateProvider', (
         $urlRouterProvider: ng.ui.IUrlRouterProvider,

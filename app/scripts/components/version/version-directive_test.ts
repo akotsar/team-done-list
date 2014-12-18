@@ -1,9 +1,9 @@
 /// <reference path="../../_app_test.ts" />
 /// <reference path="version-directive.ts"/>
 
-module MyApp.Version.Directive.Test {
-    describe('myApp.version module', () => {
-        beforeEach(module('myApp.version'));
+module TeamDoneList.Version.Directive.Test {
+    describe('teamDoneList.version module', () => {
+        beforeEach(module('teamDoneList.version'));
 
         describe('app-version directive', () => {
             it('should print current version', () => {

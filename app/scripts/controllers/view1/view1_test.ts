@@ -1,10 +1,10 @@
 /// <reference path="../../_app_test.ts" />
 /// <reference path="view1.ts" />
 
-module MyApp.View1.Test {
-    describe('myApp.view1 module', () => {
+module TeamDoneList.View1.Test {
+    describe('teamDoneList.view1 module', () => {
 
-        beforeEach(module('myApp.view1'));
+        beforeEach(module('teamDoneList.view1'));
 
         describe('view1 controller', () => {
             var $scope: View1.IView1CtrlScope;

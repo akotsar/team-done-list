@@ -36,7 +36,7 @@ module WhoDidWhat.SignIn {
             $scope.signIn = () => {
                 authService.authenticate($scope.email, $scope.password)
                     .then(() => {
-                        $state.go('home');
+                        $state.go('account');
                     })
                     .catch((resp: any) => {
                         if (resp && resp.data && resp.data.modelState) {

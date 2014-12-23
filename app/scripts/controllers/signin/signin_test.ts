@@ -34,7 +34,7 @@ module WhoDidWhat.SignIn.Test {
                     expect(authServiceMock.authenticate).toHaveBeenCalledWith('email_data', 'password_data');
                 });
 
-                it('should redirect to /home upon successful authentication', inject(($state: ng.ui.IStateService, $q: ng.IQService) => {
+                it('should redirect to /account upon successful authentication', inject(($state: ng.ui.IStateService, $q: ng.IQService) => {
                     var authDefer: ng.IDeferred<Auth.IUser>;
 
                     spyOn($state, 'go');
@@ -48,7 +48,7 @@ module WhoDidWhat.SignIn.Test {
                     authDefer.resolve();
                     $scope.$digest();
 
-                    expect($state.go).toHaveBeenCalledWith('home');
+                    expect($state.go).toHaveBeenCalledWith('account');
                 }));
 
             });

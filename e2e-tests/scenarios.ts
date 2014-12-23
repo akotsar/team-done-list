@@ -1,6 +1,6 @@
 /// <reference path="_tests.ts"/>
 
-module TeamDoneList.Tests {
+module WhoDidWhat.Tests {
     /**
      * Signs in the user. Expects the sign in page to be open.
      */

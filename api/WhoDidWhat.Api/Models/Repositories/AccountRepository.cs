@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace TeamDoneList.Api.Models.Repositories
+namespace WhoDidWhat.Api.Models.Repositories
 {
     /// <summary>
     /// A repository class for managing user accounts.

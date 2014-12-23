@@ -1,10 +1,10 @@
 /// <reference path="../../_app_test.ts" />
 /// <reference path="interpolate-filter.ts"/>
 
-module TeamDoneList.Version.InterpolateFilter.Test {
-    describe('teamDoneList.version module', () => {
+module WhoDidWhat.Version.InterpolateFilter.Test {
+    describe('whoDidWhat.version module', () => {
         beforeEach(() => {
-            module('teamDoneList.version');
+            module('whoDidWhat.version');
         });
 
         describe('interpolate filter', () => {

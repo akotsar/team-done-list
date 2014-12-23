@@ -1,10 +1,10 @@
 ﻿/// <reference path="../../_app_test.ts" />
 /// <reference path="auth-service.ts" />
 
-module TeamDoneList.Auth.Test {
-    describe('teamDoneList.auth module', () => {
+module WhoDidWhat.Auth.Test {
+    describe('whoDidWhat.auth module', () => {
 
-        beforeEach(module('teamDoneList.auth'));
+        beforeEach(module('whoDidWhat.auth'));
 
         describe('AuthService', () => {
             // Declaring variables and preparing mocks.

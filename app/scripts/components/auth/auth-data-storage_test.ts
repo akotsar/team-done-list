@@ -1,10 +1,10 @@
 ﻿/// <reference path="../../_app_test.ts" />
 /// <reference path="auth-data-storage.ts" />
 
-module TeamDoneList.Auth.Storage.Test {
-    describe('teamDoneList.auth.storage module', () => {
+module WhoDidWhat.Auth.Storage.Test {
+    describe('whoDidWhat.auth.storage module', () => {
 
-        beforeEach(module('teamDoneList.auth.storage'));
+        beforeEach(module('whoDidWhat.auth.storage'));
 
         describe('AuthDataStorage service', () => {
             // Declaring variables and preparing mocks.

@@ -1,10 +1,10 @@
 ﻿/// <reference path="../../_app_test.ts" />
 /// <reference path="signin.ts" />
 
-module TeamDoneList.SignIn.Test {
-    describe('teamDoneList.signin module', () => {
+module WhoDidWhat.SignIn.Test {
+    describe('whoDidWhat.signin module', () => {
 
-        beforeEach(module('teamDoneList.signin'));
+        beforeEach(module('whoDidWhat.signin'));
 
         describe('Signin controller', () => {
             var $scope: SignIn.ISignInCtrlScope,

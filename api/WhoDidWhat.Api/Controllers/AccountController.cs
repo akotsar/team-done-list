@@ -4,10 +4,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Owin;
-using TeamDoneList.Api.Models;
-using TeamDoneList.Api.Models.Repositories;
+using WhoDidWhat.Api.Models;
+using WhoDidWhat.Api.Models.Repositories;
 
-namespace TeamDoneList.Api.Controllers
+namespace WhoDidWhat.Api.Controllers
 {
     [Authorize]
     public class AccountController : ApiController

@@ -2,7 +2,7 @@
 /// <reference path="controllers/home/home.ts"/>
 /// <reference path="controllers/signin/signin.ts"/>
 
-module TeamDoneList {
+module WhoDidWhat {
     /**
      * Defines the scope interface for the application-level controller.
      */
@@ -31,12 +31,12 @@ module TeamDoneList {
     }
 
     // Declare app level module which depends on views, and components
-    angular.module('teamDoneList', [
+    angular.module('whoDidWhat', [
             'ui.router',
-            'teamDoneList.home',
-            'teamDoneList.version',
-            'teamDoneList.signin',
-            'teamDoneList.auth'
+            'whoDidWhat.home',
+            'whoDidWhat.version',
+            'whoDidWhat.signin',
+            'whoDidWhat.auth'
         ])
         .config([
             '$httpProvider', '$urlRouterProvider', '$stateProvider', (

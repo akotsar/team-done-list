@@ -4,12 +4,12 @@ using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using TeamDoneList.Api;
-using TeamDoneList.Api.Auth;
-using TeamDoneList.Api.Models.Repositories;
+using WhoDidWhat.Api;
+using WhoDidWhat.Api.Auth;
+using WhoDidWhat.Api.Models.Repositories;
 
 [assembly: OwinStartup(typeof(OwinStartup))]
-namespace TeamDoneList.Api
+namespace WhoDidWhat.Api
 {
     /// <summary>
     /// Performs startup configuration of the Owin services.

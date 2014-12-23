@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Infrastructure;
 
-namespace TeamDoneList.Api.Auth
+namespace WhoDidWhat.Api.Auth
 {
     /// <summary>
     /// A provider for refresh tokens.

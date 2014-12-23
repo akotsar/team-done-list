@@ -1,6 +1,6 @@
 ﻿/// <reference path="auth-data-storage.ts"/>
 
-module TeamDoneList.Auth {
+module WhoDidWhat.Auth {
     /**
      * Represents the current user.
      */
@@ -134,9 +134,9 @@ module TeamDoneList.Auth {
     }
 
     // Registering the auth module in angular and configuring http interceptors.
-    angular.module('teamDoneList.auth', [
+    angular.module('whoDidWhat.auth', [
             'ui.router',
-            'teamDoneList.auth.storage'
+            'whoDidWhat.auth.storage'
         ])
         .service('authService', AuthService)
         .config([

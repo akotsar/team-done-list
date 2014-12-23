@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../_app.ts"/>
 /// <reference path="../../components/auth/auth-service.ts"/>
 
-module TeamDoneList.SignIn {
+module WhoDidWhat.SignIn {
     /**
      * Defines the Sign In controller scope interface
      */
@@ -47,9 +47,9 @@ module TeamDoneList.SignIn {
         }
     }
 
-    angular.module('teamDoneList.signin', [
+    angular.module('whoDidWhat.signin', [
             'ui.router',
-            'teamDoneList.auth'
+            'whoDidWhat.auth'
         ])
         .controller('SignInCtrl', SignInCtrl);
 }

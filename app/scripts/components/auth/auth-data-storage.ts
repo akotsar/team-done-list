@@ -1,6 +1,6 @@
 ﻿/// <reference path="../../_app.ts"/>
 
-module TeamDoneList.Auth.Storage {
+module WhoDidWhat.Auth.Storage {
     /**
      * Defines properties returned by the authentication service.
      */
@@ -59,6 +59,6 @@ module TeamDoneList.Auth.Storage {
         }
     }
 
-    angular.module('teamDoneList.auth.storage', ['LocalStorageModule'])
+    angular.module('whoDidWhat.auth.storage', ['LocalStorageModule'])
         .service('authDataStorage', AuthDataStorage);
 }

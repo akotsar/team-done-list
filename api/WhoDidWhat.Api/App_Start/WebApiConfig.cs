@@ -3,7 +3,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using Newtonsoft.Json.Serialization;
 
-namespace TeamDoneList.Api
+namespace WhoDidWhat.Api
 {
     /// <summary>
     /// Performs startup confirmation of the WebAPI framework.

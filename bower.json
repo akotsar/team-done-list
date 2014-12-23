@@ -1,9 +1,8 @@
 {
   "name": "angular-seed-ts",
-  "description": "A simple team 'Done' tasks sharing application.",
+  "description": "A simple 'Who Did What' application.",
   "version": "0.0.0",
-  "homepage": "https://github.com/akotsar/team-done-list",
-  "license": "MIT",
+  "homepage": "https://github.com/akotsar/who-did-what",
   "private": true,
   "dependencies": {
     "angular": "1.2.x",

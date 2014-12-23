@@ -4,10 +4,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
-using TeamDoneList.Api.Models;
-using TeamDoneList.Api.Models.Repositories;
+using WhoDidWhat.Api.Models;
+using WhoDidWhat.Api.Models.Repositories;
 
-namespace TeamDoneList.Api.Auth
+namespace WhoDidWhat.Api.Auth
 {
     /// <summary>
     /// A simple implementation of the <see cref="OAuthAuthorizationServerProvider" /> class.

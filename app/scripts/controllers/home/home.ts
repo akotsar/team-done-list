@@ -1,6 +1,6 @@
 /// <reference path="../../_app.ts" />
 
-module TeamDoneList.Home {
+module WhoDidWhat.Home {
     /**
      * Defines the scope interface of the home controller.
      */
@@ -26,6 +26,6 @@ module TeamDoneList.Home {
         }
     }
 
-    angular.module('teamDoneList.home', [])
+    angular.module('whoDidWhat.home', [])
         .controller('HomeCtrl', HomeCtrl);
 }

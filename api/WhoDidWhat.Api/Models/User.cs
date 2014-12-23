@@ -1,4 +1,4 @@
-﻿namespace TeamDoneList.Api.Models
+﻿namespace WhoDidWhat.Api.Models
 {
     /// <summary>
     /// Represents a registed user.

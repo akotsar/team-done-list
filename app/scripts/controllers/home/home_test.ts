@@ -1,10 +1,10 @@
 /// <reference path="../../_app_test.ts" />
 /// <reference path="home.ts" />
 
-module TeamDoneList.Home.Test {
-    describe('teamDoneList.home module', () => {
+module WhoDidWhat.Home.Test {
+    describe('whoDidWhat.home module', () => {
 
-        beforeEach(module('teamDoneList.home'));
+        beforeEach(module('whoDidWhat.home'));
 
         describe('home controller', () => {
             var $scope: Home.IHomeCtrlScope,

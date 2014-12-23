@@ -37,7 +37,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "e2e-tests", "e2e-tests", "{
 	ProjectSection(SolutionItems) = preProject
 		e2e-tests\_tests.ts = e2e-tests\_tests.ts
 		e2e-tests\protractor.conf.js = e2e-tests\protractor.conf.js
-		e2e-tests\compiled\scenarios.js = e2e-tests\compiled\scenarios.js
 		e2e-tests\scenarios.ts = e2e-tests\scenarios.ts
 	EndProjectSection
 EndProject

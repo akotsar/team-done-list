@@ -10,3 +10,10 @@ npm-debug.log
 .sass-cache/
 e2e-tests/compiled/
 unit-tests/
+
+# .NET stuff
+packages/
+bin/
+obj/
+*.user
+*.suo

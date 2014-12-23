@@ -1284,6 +1284,7 @@ declare module ng {
             common?: any;
             post?: any;
             put?: any;
+            get?: any;
             patch?: any;
         }
     }

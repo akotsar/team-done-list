@@ -351,6 +351,8 @@ declare module jasmine {
         (...params: any[]): any;
 
         identity: string;
+        andCallThrough(): void;
+        andCallFake(fn: Function): void;
         and: SpyAnd;
         calls: Calls;
         mostRecentCall: { args: any[]; };

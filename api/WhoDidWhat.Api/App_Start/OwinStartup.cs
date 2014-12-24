@@ -19,7 +19,7 @@ namespace WhoDidWhat.Api
         /// <summary>
         /// The token expiration time.
         /// </summary>
-        private static readonly TimeSpan AuthTokenExipration = TimeSpan.FromSeconds(10);
+        private static readonly TimeSpan AuthTokenExipration = TimeSpan.FromMinutes(20);
 
         /// <summary>
         /// The URL for token authentication.

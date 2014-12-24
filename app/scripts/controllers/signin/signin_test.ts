@@ -12,7 +12,7 @@ module WhoDidWhat.SignIn.Test {
                 authServiceMock: Auth.AuthService;
 
             beforeEach(inject(($rootScope: ng.IScope, $controller: ng.IControllerService, $q: ng.IQService) => {
-                $scope = $rootScope.$new();
+                $scope = <ISignInCtrlScope>$rootScope.$new();
                 authServiceMock = <Auth.AuthService>{
                     authenticate(username: string, password: string): ng.IPromise<any> {
                         return $q.defer().promise;
@@ -49,6 +49,23 @@ module WhoDidWhat.SignIn.Test {
                     $scope.$digest();
 
                     expect($state.go).toHaveBeenCalledWith('account');
+                }));
+
+                it('should display progress while authenticating', inject(($q: ng.IQService) => {
+                    var authDefer: ng.IDeferred<Auth.IUser>;
+
+                    spyOn(authServiceMock, 'authenticate').andCallFake(() => {
+                        authDefer = $q.defer();
+                        return authDefer.promise;
+                    });
+
+                    expect($scope.progress).not.toBeTruthy();
+                    $scope.signIn();
+                    expect($scope.progress).toBeTruthy();
+
+                    authDefer.reject();
+                    $scope.$digest();
+                    expect($scope.progress).not.toBeTruthy();
                 }));
 
             });

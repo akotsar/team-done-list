@@ -1,19 +1,25 @@
 ﻿
+<div layout="column" layout-align="center center">
+    <h3>Welcome to WhoDidWhat!</h3>
 
-<h3>Welcome to WhoDidWhat!</h3>
+    <div layout="column">
+        <div>
+            <md-text-float label="Email" type="email" ng-model="email" />
+        </div>
 
-<div layout="column">
-    <div>
-        <label for="email">Email</label>
-        <input type="text" ng-model="email" id="email" />
-    </div>
+        <div>
+            <md-text-float label="Password" type="password" ng-model="password" />
+        </div>
 
-    <div>
-        <label for="password">Password</label>
-        <input type="password" ng-model="password" id="password" />
-    </div>
+        <div layout="row" layout-align="left" layout-margin>
+            <div flex>
+                <md-button ng-click="signIn()" class="md-primary md-raised">Sign In</md-button>
+            </div>
 
-    <div>
-        <md-button ng-click="signIn()" class="md-primary">Sign In</md-button>
+            <div flex ng-if="progress">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+
+        </div>
     </div>
 </div>

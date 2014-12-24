@@ -9,7 +9,7 @@ module WhoDidWhat.SignIn {
         /**
          * Signs the user in.
          */
-        signIn? (): void;
+        signIn(): void;
 
         /**
          * The entered email address.
@@ -20,6 +20,11 @@ module WhoDidWhat.SignIn {
          * The entered password.
          */
         password?: string;
+
+        /**
+         * Indicates the the authentication is in progress.
+         */
+        progress?: boolean;
     }
 
     /**
@@ -32,18 +37,29 @@ module WhoDidWhat.SignIn {
             '$state'
         ];
 
-        constructor($scope: ISignInCtrlScope, authService: Auth.AuthService, $state: ng.ui.IStateService) {
-            $scope.signIn = () => {
-                authService.authenticate($scope.email, $scope.password)
-                    .then(() => {
-                        $state.go('account');
-                    })
-                    .catch((resp: any) => {
-                        if (resp && resp.data && resp.data.modelState) {
-                            alert(resp.data.modelState['']);
-                        }
-                    });
-            }
+        constructor(private $scope: ISignInCtrlScope,
+            private authService: Auth.AuthService,
+            private $state: ng.ui.IStateService) {
+            $scope.signIn = <() => void>angular.bind(this, this.signIn);
+        }
+
+        /**
+         * Signs the user in.
+         */
+        public signIn(): void {
+            this.$scope.progress = true;
+            this.authService.authenticate(this.$scope.email, this.$scope.password)
+                .then(() => {
+                    this.$state.go('account');
+                })
+                .catch((resp: any) => {
+                    if (resp && resp.data && resp.data.modelState) {
+                        alert(resp.data.modelState['']);
+                    }
+                })
+                .finally(() => {
+                    this.$scope.progress = false;
+                });
         }
     }
 

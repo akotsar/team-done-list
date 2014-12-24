@@ -1,9 +1,17 @@
-<div class="header">
-    <ul class="menu" ui-sref-active="active">
-        <li><a ui-sref="account">Home</a></li>
-        <li><a href="javascript:void(0);" ng-click="signOut()">Sign Out</a></li>
-    </ul>
-</div>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h3>
+            <span>WhoDidWhat</span>
+        </h3>
+
+        <md-button href="#/account">Home</md-button>
+
+        <span flex></span>
+        <span>{{user.name}}</span>
+        <md-button ng-click="signOut()">Sign Out</md-button>
+    </div>
+</md-toolbar>
+
 
 <h4>{{greeting}}</h4>
 

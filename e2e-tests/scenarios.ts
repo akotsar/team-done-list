@@ -26,7 +26,7 @@ module WhoDidWhat.Tests {
      * Checks if the user is signed out, signs out if yes.
      */
     function ensureSignedOut(): void {
-        var signOutLink = element(by.partialLinkText('Sign Out'));
+        var signOutLink = element(by.cssContainingText(".md-button", "Sign Out"));
         signOutLink.isPresent().then((present) => {
             if (present) signOutLink.click();
         });
@@ -51,7 +51,7 @@ module WhoDidWhat.Tests {
         it('should display Sign Out link when the user is signed in.', () => {
             ensureSignedIn();
             browser.get('index.html#/account');
-            expect(element(by.partialLinkText('Sign Out')).isPresent()).toBeTruthy();
+            expect(element(by.cssContainingText(".md-button", "Sign Out")).isPresent()).toBeTruthy();
         });
 
         describe('signin', () => {
@@ -61,8 +61,8 @@ module WhoDidWhat.Tests {
             });
 
             it('should render signin when user navigates to /signin', () => {
-                expect(browser.driver.isElementPresent(by.id('email'))).toBeTruthy();
-                expect(browser.driver.isElementPresent(by.id('password'))).toBeTruthy();
+                expect(element(by.model('email')).isDisplayed()).toBeTruthy();
+                expect(element(by.model('password')).isDisplayed()).toBeTruthy();
             });
 
             it('should sign in the user and navigate to /account', () => {

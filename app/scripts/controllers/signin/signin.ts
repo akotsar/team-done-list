@@ -34,12 +34,14 @@ module WhoDidWhat.SignIn {
         public static $inject = [
             '$scope',
             'authService',
-            '$state'
+            '$state',
+            '$mdToast'
         ];
 
         constructor(private $scope: ISignInCtrlScope,
             private authService: Auth.AuthService,
-            private $state: ng.ui.IStateService) {
+            private $state: ng.ui.IStateService,
+            private $mdToast: any) {
             $scope.signIn = <() => void>angular.bind(this, this.signIn);
         }
 
@@ -53,9 +55,11 @@ module WhoDidWhat.SignIn {
                     this.$state.go('account');
                 })
                 .catch((resp: any) => {
-                    if (resp && resp.data && resp.data.modelState) {
-                        alert(resp.data.modelState['']);
-                    }
+                    this.$mdToast.show(
+                        this.$mdToast.simple()
+                            .content('The user name or password is incorrect.')
+                            .position('top right')
+                        );
                 })
                 .finally(() => {
                     this.$scope.progress = false;
@@ -65,6 +69,7 @@ module WhoDidWhat.SignIn {
 
     angular.module('whoDidWhat.signin', [
             'ui.router',
+            'ngMaterial',
             'whoDidWhat.auth'
         ])
         .controller('SignInCtrl', SignInCtrl);

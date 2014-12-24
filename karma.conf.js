@@ -8,6 +8,10 @@ module.exports = function(config){
       'app/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/angular-local-storage/dist/angular-local-storage.js',
+      'app/bower_components/angular-animate/angular-animate.js',
+      'app/bower_components/angular-aria/angular-aria.js',
+      'app/bower_components/hammerjs/hammer.js',
+      'app/bower_components/angular-material/angular-material.js',
       'app/dist/js/**/*.js',
       'unit-tests/**/*.js'
     ],
